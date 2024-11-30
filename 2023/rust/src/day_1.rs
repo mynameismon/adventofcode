@@ -1,13 +1,4 @@
-
-use std::fs::read_to_string;
-
-fn read_lines (filename: &str) -> Vec<String> {
-    read_to_string(filename)
-        .unwrap()
-        .lines()
-        .map(String::from)
-        .collect()
-}
+use crate::utils;
 
 fn parse_integers (input_line: &String) -> Vec<u32> {
     let replacements: [(&str, &str); 10] = [("zero", "zero0zero"),
@@ -38,7 +29,7 @@ fn parse_integers (input_line: &String) -> Vec<u32> {
 
 // #[flux_sig(fn () -> u32)]
 pub fn part_1 () -> u32 {
-    let lines: Vec<String> = read_lines("../inputs/d1_p1.txt");
+    let lines: Vec<String> = utils::read_lines("../inputs/d1_p1.txt");
     let result: u32 = lines.clone()
                               .into_iter()
                               .map(|x| {
@@ -50,7 +41,7 @@ pub fn part_1 () -> u32 {
 }
 
 pub fn part_1_idiomatic () -> u32 {
-    let lines: Vec<String> = read_lines("../inputs/d1_p1.txt");
+    let lines: Vec<String> = utils::read_lines("../inputs/d1_p1.txt");
 
     let mut result: u32 = 0;
     for line in lines {
@@ -65,7 +56,7 @@ pub fn part_1_idiomatic () -> u32 {
 }
 
 pub fn part_2 () -> u32 {
-    let lines: Vec<String> = read_lines("../inputs/d1_p1.txt");
+    let lines: Vec<String> = utils::read_lines("../inputs/d1_p1.txt");
 
     let result: u32 = lines.into_iter()
                            .map(|line| parse_integers(&line))
