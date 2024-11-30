@@ -50,8 +50,6 @@ fn calc_ball_sum(game_line: &mut str) -> Game {
 
 impl Game {
     fn is_valid_game (&self) -> bool {
-        println!("Game id: {} [{} red, {} green, {} blue]", self.game_no, self.red, self.green, self.blue);
-
         self.red <= 12 &&
         self.green <= 13 &&
         self.blue <= 14
