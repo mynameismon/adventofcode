@@ -13,5 +13,5 @@ fn main() {
     // let day: u32 = day_str.trim().parse().expect("Not an integer!");
 
     println!("Running day 1");
-    day_1::part_1();
+    day_1::solve();
 }
