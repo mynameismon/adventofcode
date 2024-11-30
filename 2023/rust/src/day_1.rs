@@ -22,13 +22,11 @@ fn parse_integers (input_line: &String) -> Vec<u32> {
                                    .filter(|x| x.is_ascii_digit())
                                    .map(|x| x.to_digit(10).unwrap())
                                    .collect();
-    print!("Input Line: {:?}\t", input_line);
-    println!("Digits: {:?}", digits);
     digits
 }
 
 // #[flux_sig(fn () -> u32)]
-pub fn part_1 () -> u32 {
+fn part_1 () -> u32 {
     let lines: Vec<String> = utils::read_lines("../inputs/d1_p1.txt");
     let result: u32 = lines.clone()
                               .into_iter()
@@ -40,7 +38,8 @@ pub fn part_1 () -> u32 {
     result
 }
 
-pub fn part_1_idiomatic () -> u32 {
+#[allow(dead_code)]
+fn part_1_idiomatic () -> u32 {
     let lines: Vec<String> = utils::read_lines("../inputs/d1_p1.txt");
 
     let mut result: u32 = 0;
@@ -55,7 +54,7 @@ pub fn part_1_idiomatic () -> u32 {
     result
 }
 
-pub fn part_2 () -> u32 {
+fn part_2 () -> u32 {
     let lines: Vec<String> = utils::read_lines("../inputs/d1_p1.txt");
 
     let result: u32 = lines.into_iter()
