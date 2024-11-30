@@ -21,6 +21,21 @@ pub fn part_1 () {
     println!("Answer to Part 1: {}", result);
 }
 
+pub fn part_1_idiomatic () {
+    let lines: Vec<String> = read_lines("../inputs/d1_p1.txt");
+
+    let mut result: u32 = 0;
+    for line in lines {
+        let digits: Vec<u32> = line.chars()
+                                   .filter(|x| x.is_ascii_digit())
+                                   .map(|x| x.to_digit(10).unwrap())
+                                   .collect();
+        result += digits.get(0).unwrap() * 10 + digits.last().unwrap();
+    }
+
+    println!("Answer to Part 1: {}", result);
+}
+
 pub fn part_2 () {
     unimplemented!();
 }
