@@ -3,10 +3,11 @@ pub mod day_2;
 pub mod day_9;
 // pub mod day_10;
 pub mod day_12;
+pub mod day_13;
+pub mod day_22;
 pub mod utils;
 
 fn main() {
-
     println!("Running day 1");
     day_1::solve();
 
@@ -23,4 +24,10 @@ fn main() {
     // TODO: Day 10 and 11 as well lmao
     println!("Running day 12");
     day_12::solve();
+
+    println!("Running day 13");
+    day_13::solve();
+
+    println!("Running day 22");
+    day_22::solve();
 }

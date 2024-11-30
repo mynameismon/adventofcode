@@ -5,4 +5,10 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[package.metadata.flux]
+enabled = true
+
+[rust-analyzer.check]
+extraArgs = ["flux", "--workspace", "--message-format=json-diagnostic-rendered-ansi"]
+
 [dependencies]
