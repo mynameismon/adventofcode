@@ -1,5 +1,4 @@
 use std::fs::read_to_string;
-use std::env::current_dir;
 
 fn read_lines (filename: &str) -> Vec<String> {
     read_to_string(filename)
@@ -10,7 +9,16 @@ fn read_lines (filename: &str) -> Vec<String> {
 }
 
 pub fn part_1 () {
-    println!("Lines read: {:?}", read_lines("../inputs/d1_p1.txt"));
+    let lines: Vec<String> = read_lines("../inputs/d1_p1.txt");
+    let result: u32 = lines.clone()
+                              .into_iter()
+                              .map(|x| {
+                                  let v : Vec<u32> = x.matches(char::is_numeric).map(|x| x.parse::<u32>().unwrap()).collect();
+                                  v.get(0).unwrap() * 10 + v.last().unwrap()
+                              })
+                              .sum();
+
+    println!("Answer to Part 1: {}", result);
 }
 
 pub fn part_2 () {
