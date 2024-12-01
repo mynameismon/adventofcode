@@ -1,0 +1,18 @@
+#+TITLE: Advent of Code 2024
+
+Since this year is the year of APL, we are going to use a jupyter notebook!
+
+#+begin_src dyalog
+'Hello World'
+#+end_src
+
+#+begin_src jupyter-apl :session *new*
+⍳6
+#+end_src
+
+#+RESULTS:
+: 1 2 3 4 5 6
+: 
+
+#+end_src
+:END:
